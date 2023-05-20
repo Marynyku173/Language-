@@ -395,6 +395,7 @@ void SquareFinder()
 SquareFinder();
 
 */
+/*
 Console.WriteLine("Enter your X coordinste: ");
 int xCoord = Convert.ToInt32(Console.ReadLine());
 
@@ -425,9 +426,35 @@ int Koords(int x, int y)
 
 int quater = Koords(xCoord, yCoord );
 Console.WriteLine(quater);
+*/
 
+//Напишите программу, которая принимает на вход число(А) и выдает сумму чисел от 1 до А.
+/*
+void MetFindSum(int a)
+{
+    int sum = 0;
+    for(int current = 1; current <= a; current++)
+    {
+        sum +=current; //sum = sum + current
+    }
+    Console.WriteLine($"Sum of elements from 1 to {a} is {sum}");
+}
+Console.WriteLine("Input your number: ");
+int user_num = Convert.ToInt32(Console.ReadLine());
 
+if(user_num >= 1)
+{
+    MetFindSum(user_num);
+}
+else
+{
+    Console.WriteLine("Impossible val!");
+}
 
+*/
+
+// Напишите программу, которая принимает на вход число и выдает количество цифр в числе.
+// 789 -> 3
 
 
 
