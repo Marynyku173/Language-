@@ -513,7 +513,7 @@ MultipleFinder(number);
 
 // Напишите программу, которая выводит массив из 8 эелементов, заполненный нулями и единицами в случайном порядке.
 // [1, 0, 1, 1, 0,1 ,0, 0]
-
+/*
 int [] CreatNewArray(int size, int min, int max)//метод создания массива
 {
      int[] array = new int [size]; // int(1)тип данных массива, [] -  массив, array -  имя массива, new - выделение памяти, int [размер массива]
@@ -538,4 +538,8 @@ int maxVal = 1;
 
 int [] array1 = CreatNewArray(countOfelem, minVal, maxVal);
 ShowArray(array1);
+*/
+
+
+
 
