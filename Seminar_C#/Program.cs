@@ -455,11 +455,87 @@ else
 
 // Напишите программу, которая принимает на вход число и выдает количество цифр в числе.
 // 789 -> 3
+// 95123 -> 5
+/*
 
+int CountOfDigits (int number)
+{
+    int countDigits = 1;
+    while(number >= 10)
+    {
+        number = number / 10;
+        countDigits++;
+    }
+    return countDigits;
+}
 
+Console.WriteLine("Input your number: ");
+int user_num = Convert.ToInt32(Console.ReadLine());
+int count;
 
+if(user_num >= 0)
+{
+    count = CountOfDigits(user_num);
+}
+else
+{
+    count = CountOfDigits(user_num * (-1));
+}
+Console.WriteLine(count);
+*/
 
+//Напишите программу, которая прнимает на вход число N и выдаёт произведение чисел от 1 до N
+/*
+void MultipleFinder(int n)
+{
+    int multi = 1;
+    for(int cur = 1; cur <= n; cur++)
+    {
+        multi *= cur; // multi = multi * cur
+    }
+Console.WriteLine($"Product of elements from 1 to {n} is {multi}");
+}
 
+Console.WriteLine("Enter number: ");
+int number =  Convert.ToInt32(Console.ReadLine());
 
+if (number <= 0)
+{
+    while (number <= 0)
+    {
+        Console.WriteLine("Enter POSITIVE number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+    }
+}
 
+MultipleFinder(number);
+*/
+
+// Напишите программу, которая выводит массив из 8 эелементов, заполненный нулями и единицами в случайном порядке.
+// [1, 0, 1, 1, 0,1 ,0, 0]
+
+int [] CreatNewArray(int size, int min, int max)//метод создания массива
+{
+     int[] array = new int [size]; // int(1)тип данных массива, [] -  массив, array -  имя массива, new - выделение памяти, int [размер массива]
+     for(int i = 0; i < size;  i++)
+     //array[i] - значение элемента в массиве array на позиции i
+        array[i] = new Random().Next(min, max + 1) ;
+    return array;
+     
+}
+
+void ShowArray(int [] array)
+{
+    for(int i = 0; i < array.Length; i++)//array.Length - определяет кол-во элементов в уже существующем массиве
+        Console.Write(array[i] + " ");
+}
+
+Console.WriteLine("Enter count of elements: ");
+int countOfelem =  Convert.ToInt32(Console.ReadLine());
+
+int minVal = 0;
+int maxVal = 1;
+
+int [] array1 = CreatNewArray(countOfelem, minVal, maxVal);
+ShowArray(array1);
 
