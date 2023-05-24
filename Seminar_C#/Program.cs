@@ -543,6 +543,106 @@ ShowArray(array1);
 // Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9, 9].
 // Найдите сумму отрицательных и положительных элементов.
 
+int [] CreatRandomArray (int size, int minVal, int maxVal)
+{
+    int [] newArray = new int[size];
+    for(int i = 0; i < size; i++)
+        newArray [i] = new Random().Next(minVal, maxVal + 1 );
+    return newArray;
+}
+
+void ShowArray( int[] array1)
+{
+    for(int i = 0; i < array1.Length; i++ )
+        Console.Write(array1[i]+ " ");
+        Console.WriteLine();
+}
+
+/*
+int FindSummNegativeElem(int[] array)
+{
+    int sumNegative = 0;
+    for(int i = 0; i < array.Length; i++)
+    if(array[i] < 0)
+        sumNegative += array[i];
+    return sumNegative;
+
+}
+*/
+/*
+int FindSummPositiveElem(int[] array)
+{
+    int sumPositive = 0;
+    for(int i = 0; i < array.Length; i++)
+    if(array[i] > 0)
+        sumPositive += array[i];
+    return sumPositive;
+    
+}
+*/
+/*
+int sizeArray = 12;
+int minVal = -9;
+int maxVal = 9;
+
+int [] createdArray = CreatRandomArray(sizeArray, minVal, maxVal);
+ShowArray(createdArray);
+//Console.WriteLine($"Summ of pozitive elements is {FindSummPositiveElem(createdArray)}");
+//int resultNegative = FindSummNegativeElem(createdArray);
+//Console.WriteLine($"Summ of negative elements is {resultNegative}");
+*/
+/*
+void FindSummNegativeElem(int[] array)
+{
+    int sumNegative = 0;
+    for(int i = 0; i < array.Length; i++)
+    if(array[i] < 0)
+        sumNegative += array[i];
+        Console.WriteLine($"Summ of negative elements is {sumNegative}");
+}  
 
 
+void FindSummPositiveElem(int[] array)
+{
+    int sumPositive = 0;
+    for(int i = 0; i < array.Length; i++)
+    if(array[i] > 0)
+        sumPositive += array[i];
+    Console.WriteLine($"Summ of pozitive elements is {sumPositive}");
+}
+*/
+/*
+void FindSummElem(int[] array)
+{
+    int sumPositive = 0;
+    int sumNegative = 0;
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] > 0)
+            sumPositive += array[i];
+        if(array[i] < 0)
+            sumNegative += array[i];
+    }
+        Console.WriteLine($"Summ of negative elements is {sumNegative}");
+        Console.WriteLine($"Summ of pozitive elements is {sumPositive}");
+}
+FindSummElem(createdArray);
+*/
 
+/* Найдите произведение пар чисел в одномерном массиве.
+Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+Результата запишите в новом массиве.
+[1,2,3,4,5] -> 5, 8, 3
+[6,7,3,6] -> 336,21
+*/
+
+int [] FindMultiPar(int [] arrayForMulti)
+{
+
+}
+/*
+Алгоритм действий:
+1.длина массива с произведением size_start четный, то длина size_finish = size_start / 2;size_start нечетный, то длина size_finish = (size_start + 1) / 2;
+2.массив для вывода результатов умножения
+3. заполнить массив произведениями [i] * [size_finish - 1 - i]
+4. проверить запись осевого массива
