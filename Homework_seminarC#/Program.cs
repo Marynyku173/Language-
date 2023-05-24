@@ -303,15 +303,15 @@ CubeFinder();
 void Exponentiation (int num, int degree)
 
 {
-    
-        for(int step = 0; step <= degree; step++)
+        int result = 1;
+        for(int step = 0; step < degree; step++)
         {
             
-           int result = num * num;
+            result *= num ;
             
         }
         
-    Console.WriteLine($"The number{num} raised to a power {degree} is equal to {result}.");
+    Console.WriteLine($"The number {num} raised to a power {degree} is equal to {result}.");
 }
 
 Console.WriteLine("Input number: ");
@@ -328,11 +328,15 @@ Exponentiation(num, degree);
 
 int CountOfDigits (int number)
 {
-
-
+    int res = 0;
+    while(number > 0)
+    {
+        res += number % 10;
+        number = number / 10;
+    }
+    return res;
     
 }
-
 
 Console.WriteLine("Input your number: ");
 int user_num = Convert.ToInt32(Console.ReadLine());
