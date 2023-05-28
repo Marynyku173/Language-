@@ -325,7 +325,7 @@ Exponentiation(num, degree);
 
 
 //Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-
+/*
 int CountOfDigits (int number)
 {
     int res = 0;
@@ -352,7 +352,7 @@ else
 }
 Console.WriteLine(count);
 
-
+*/
 
 
 
@@ -396,7 +396,142 @@ else
 }
 */
 
+//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами.
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+
+//[345, 897, 568, 234] -> 2
+
+/*
+int [] CreatRandomArray (int size, int minVal, int maxVal)
+{
+    int [] newArray = new int[size];
+    for(int i = 0; i < size; i++)
+        newArray [i] = new Random().Next(minVal, maxVal + 1 );
+    return newArray;
+}
+
+void ShowArray( int[] array1)
+{
+    for(int i = 0; i < array1.Length; i++ )
+        Console.Write(array1[i]+ " ");
+        Console.WriteLine();
+}
+int sizeStart = new Random().Next(1, 100);
+Console.WriteLine($"The length of your array is{sizeStart}");
+Console.WriteLine();
+int minPossibVal = 100;
+int maxPossibVal = 999;
+
+void ParityCheck(int [] array3DigNum)
+{   int count = 0;
+    for(int i = 0; i < array3DigNum.Length; i++)
+        if(array3DigNum[i] % 2 == 0)
+        {
+            count++;
+        }
+    Console.WriteLine($"The number of even numbers in the array is{count}");
+    Console.WriteLine();
+
+}
+
+int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );
+ShowArray(arrayStart);
+Console.WriteLine();
+
+ParityCheck (arrayStart);
+*/
+
+//Задача 36: Задайте одномерный массив, заполненный случайными числами.
+//Найдите сумму элементов, стоящих на нечётных позициях.
+/*
+int [] CreatRandomArray (int size, int minVal, int maxVal)
+{
+    int [] newArray = new int[size];
+    for(int i = 0; i < size; i++)
+        newArray [i] = new Random().Next(minVal, maxVal + 1 );
+    return newArray;
+}
+
+void ShowArray( int[] array1)
+{
+    for(int i = 0; i < array1.Length; i++ )
+        Console.Write(array1[i]+ " ");
+        Console.WriteLine();
+}
+int sizeStart = new Random().Next(1, 100);
+Console.WriteLine($"The length of your array is{sizeStart}");
+Console.WriteLine();
+int minPossibVal = -100;
+int maxPossibVal = 100;
+
+void ParityCheck(int [] array3DigNum)
+{   int count = 0;
+    for(int i = 0; i < array3DigNum.Length; i++)
+        if(i % 2 !=0)
+        {
+            count += array3DigNum[i];
+        }
+       Console.WriteLine($"The sum of the elements standing in odd positions is equal to{count}"); 
+}
+
+int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );
+ShowArray(arrayStart);
+Console.WriteLine();
+
+ParityCheck (arrayStart);
+*/
+
+//Задача 38: Задайте массив вещественных чисел. 
+//Найдите разницу между максимальным и минимальным элементов массива.
+
+
+int [] CreatRandomArray (int size, int minVal, int maxVal)
+{
+    int [] newArray = new int[size];
+    for(int i = 0; i < size; i++)
+        newArray[i] = newArray[i] = new Random().Next(minVal, maxVal + 1);//+ new Random().NextDouble();
+    return newArray;
+}
+
+void ShowArray( int[] array1)
+{
+    for(int i = 0; i < array1.Length; i++ )
+        Console.Write(array1[i]+ " ");
+        Console.WriteLine();
+}
+int sizeStart = new Random().Next(1, 100);
+Console.WriteLine($"The length of your array is{sizeStart}");
+Console.WriteLine();
+int minPossibVal = 1;
+int maxPossibVal = 100;
 
 
 
+
+int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );// создали массив рандомный
+ShowArray(arrayStart);// продемонстрировали массив исходный
+
+FindMinMax( );
+
+void FindMinMax( )
+{   int min = 0;
+    int max = 0;
+    int i;
+    for( i = 0; i < arrayStart.Length; i++)
+    { 
+        if(min > arrayStart[i] )
+        {
+           min = arrayStart[i];
+        }    
+        else if(arrayStart[i]> max  )
+        {
+            max = arrayStart[i];
+        }
+       
+    }
+    
+    Console.WriteLine($"The maximum number is{max} and the minimum number is {min}");
+    int res = max - min;
+    Console.WriteLine($"The difference between the maximum and minimum elements of the array is{res}");
+}
 
