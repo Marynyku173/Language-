@@ -511,27 +511,42 @@ int maxPossibVal = 100;
 int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );// создали массив рандомный
 ShowArray(arrayStart);// продемонстрировали массив исходный
 
-FindMinMax( );
 
-void FindMinMax( )
+
+int FindMin( )
 {   int min = 0;
+    
+    int i;
+    for( i = 0; i < arrayStart.Length; i++)
+    { 
+        if(arrayStart[i] < min )
+        {
+           min = arrayStart[i];
+        }    
+    }
+    return min;
+}
+
+int FindMax( )
+{   
     int max = 0;
     int i;
     for( i = 0; i < arrayStart.Length; i++)
     { 
-        if(min > arrayStart[i] )
-        {
-           min = arrayStart[i];
-        }    
-        else if(arrayStart[i]> max  )
+        if(arrayStart[i]> max  )
         {
             max = arrayStart[i];
         }
-       
     }
-    
-    Console.WriteLine($"The maximum number is{max} and the minimum number is {min}");
-    int res = max - min;
+    return max;
+}    
+    void Result()
+    {  int minNum = FindMin();
+       int maxNum = FindMax();
+    int res = maxNum - minNum;
+    Console.WriteLine($"Макс это{maxNum}");
+    Console.WriteLine($"Min это{minNum}");
     Console.WriteLine($"The difference between the maximum and minimum elements of the array is{res}");
-}
+    }
 
+Result();
