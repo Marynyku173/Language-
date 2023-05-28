@@ -635,14 +635,38 @@ FindSummElem(createdArray);
 [1,2,3,4,5] -> 5, 8, 3
 [6,7,3,6] -> 336,21
 */
-
-int [] FindMultiPar(int [] arrayForMulti)
-{
-
-}
 /*
 Алгоритм действий:
 1.длина массива с произведением size_start четный, то длина size_finish = size_start / 2;size_start нечетный, то длина size_finish = (size_start + 1) / 2;
 2.массив для вывода результатов умножения
-3. заполнить массив произведениями [i] * [size_finish - 1 - i]
+3. заполнить массив произведениями [i] * [size_start - 1 - i]
 4. проверить запись осевого массива
+*/
+
+int [] FindMultiPar(int [] arrayForMulti)
+{
+    int sizeTemp; // длина массива с произведениями
+    if(arrayForMulti.Length % 2 == 0)//проверка остатка деления на четность
+        sizeTemp = arrayForMulti.Length / 2;
+    else sizeTemp = (arrayForMulti.Length + 1) / 2;
+
+        int [] arrayMulti = new int[sizeTemp];// создание нового массива для хранения результатов умножения
+
+    for(int i = 0; i < arrayForMulti.Length / 2; i++)// для парных значений производим умножение, те идем до середины (5/2= 2, i = 0, 1)
+    {
+        arrayMulti[i] = arrayForMulti[i] * arrayForMulti[arrayForMulti.Length - 1 - i];// [0]*[4]   [1]*[3]
+    }
+    if(arrayForMulti.Length %2 != 0)// надпись !=0 означает не равен 0, если в исходном массиве нечетное кол-во элементов то мы записываем в конечный 
+        arrayMulti[sizeTemp - 1] = arrayForMulti[sizeTemp - 1];//массив на последнюю позицию элемент из исходного массива с этой же позицией
+
+    return arrayMulti;
+}
+int sizeStart = 9; //
+int minPossibVal = 1;
+int maxPossibVal = 9;
+
+int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );// создали массив рандомный
+ShowArray(arrayStart);// продемонстрировали массивв исходный
+int [] arrayFinish = FindMultiPar (arrayStart);// создали и  заполнили массив с результатом умножения
+ShowArray (arrayFinish);// продемонстрировали массив с умножением
+
