@@ -642,7 +642,7 @@ FindSummElem(createdArray);
 3. заполнить массив произведениями [i] * [size_start - 1 - i]
 4. проверить запись осевого массива
 */
-
+/*
 int [] FindMultiPar(int [] arrayForMulti)
 {
     int sizeTemp; // длина массива с произведениями
@@ -666,7 +666,38 @@ int minPossibVal = 1;
 int maxPossibVal = 9;
 
 int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );// создали массив рандомный
-ShowArray(arrayStart);// продемонстрировали массивв исходный
+ShowArray(arrayStart);// продемонстрировали массив исходный
 int [] arrayFinish = FindMultiPar (arrayStart);// создали и  заполнили массив с результатом умножения
 ShowArray (arrayFinish);// продемонстрировали массив с умножением
+*/
 
+
+
+//Задайте одномерный массив из 123 случайных чисел.
+// Найдите количество элементов массива, значения котoрых лежат в отрезке [10, 99].
+// Пример для массива из 5, а не из 123 элементов.  В своем решении сделайте для 123./
+//[5, 18, 123, 6, 2] -> 1
+//[1, 2, 3, 6, 2] -> 0
+//[10, 11, 12, 13 , 14] -> 5
+
+
+void Count1099(int []  arrayForFind)
+{
+    int count = 0;
+    for (int i = 0; i < arrayForFind.Length; i++)
+        if(arrayForFind[i] >= 10 && arrayForFind[i] <= 99)
+            count++;
+    Console.WriteLine($"Count of 2digits elements is {count}");
+}
+
+int sizeStart = 123; 
+int minPossibVal = 1;
+int maxPossibVal = 999;
+
+int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );// создали массив рандомный
+ShowArray(arrayStart);// продемонстрировали массив исходный
+
+Count1099 (arrayStart);
+
+//newArray[i] = new Random().Next(minValue, maxValue + 1) + Random().NextDouble(); //рандомайзер вещественных чисел(не целых, а с остатком, например 7,5; 8,1)Остатков(от 0 до 1)
+//double или float потому, что int  не подойдет
