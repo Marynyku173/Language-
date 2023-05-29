@@ -485,19 +485,21 @@ ParityCheck (arrayStart);
 //Найдите разницу между максимальным и минимальным элементов массива.
 
 
-int [] CreatRandomArray (int size, int minVal, int maxVal)
+double [] CreatRandomArray (int size, int minVal, int maxVal)
 {
-    int [] newArray = new int[size];
+    double [] newArray = new double[size];
     for(int i = 0; i < size; i++)
-        newArray[i] = newArray[i] = new Random().Next(minVal, maxVal + 1);//+ new Random().NextDouble();
+        newArray[i] = newArray[i] = new Random().Next(minVal, maxVal + 1) + new Random().NextDouble();
+        
     return newArray;
 }
 
-void ShowArray( int[] array1)
+void ShowArray( double[] array1)
 {
     for(int i = 0; i < array1.Length; i++ )
         Console.Write(array1[i]+ " ");
         Console.WriteLine();
+        
 }
 int sizeStart = new Random().Next(1, 100);
 Console.WriteLine($"The length of your array is{sizeStart}");
@@ -508,13 +510,13 @@ int maxPossibVal = 100;
 
 
 
-int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );// создали массив рандомный
+double[] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );// создали массив рандомный
 ShowArray(arrayStart);// продемонстрировали массив исходный
 
 
 
-int FindMin( )
-{   int min = 0;
+double FindMin( )
+{   double min = arrayStart[0];
     
     int i;
     for( i = 0; i < arrayStart.Length; i++)
@@ -527,9 +529,9 @@ int FindMin( )
     return min;
 }
 
-int FindMax( )
+double FindMax( )
 {   
-    int max = 0;
+    double max = 0;
     int i;
     for( i = 0; i < arrayStart.Length; i++)
     { 
@@ -541,12 +543,11 @@ int FindMax( )
     return max;
 }    
     void Result()
-    {  int minNum = FindMin();
-       int maxNum = FindMax();
-    int res = maxNum - minNum;
-    Console.WriteLine($"Макс это{maxNum}");
-    Console.WriteLine($"Min это{minNum}");
-    Console.WriteLine($"The difference between the maximum and minimum elements of the array is{res}");
+    {  double minNum = FindMin();
+       double maxNum = FindMax();
+    double res = maxNum - minNum;
+    
+    Console.WriteLine($"The difference between the maximum and minimum elements of the array is {res}");
     }
 
 Result();
