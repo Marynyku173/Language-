@@ -512,6 +512,7 @@ int maxPossibVal = 100;
 
 double[] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );// создали массив рандомный
 ShowArray(arrayStart);// продемонстрировали массив исходный
+Console.WriteLine();
 
 
 

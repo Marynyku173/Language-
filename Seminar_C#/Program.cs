@@ -542,7 +542,7 @@ ShowArray(array1);
 
 // Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9, 9].
 // Найдите сумму отрицательных и положительных элементов.
-
+/*
 int [] CreatRandomArray (int size, int minVal, int maxVal)
 {
     int [] newArray = new int[size];
@@ -557,7 +557,7 @@ void ShowArray( int[] array1)
         Console.Write(array1[i]+ " ");
         Console.WriteLine();
 }
-
+*/
 /*
 int FindSummNegativeElem(int[] array)
 {
@@ -679,7 +679,7 @@ ShowArray (arrayFinish);// продемонстрировали массив с 
 //[5, 18, 123, 6, 2] -> 1
 //[1, 2, 3, 6, 2] -> 0
 //[10, 11, 12, 13 , 14] -> 5
-
+/*
 
 void Count1099(int []  arrayForFind)
 {
@@ -701,3 +701,47 @@ Count1099 (arrayStart);
 
 //newArray[i] = new Random().Next(minValue, maxValue + 1) + Random().NextDouble(); //рандомайзер вещественных чисел(не целых, а с остатком, например 7,5; 8,1)Остатков(от 0 до 1)
 //double или float потому, что int  не подойдет
+*/
+
+
+
+// Напишите программу, которая перевернет одномерный массив
+//(последний элемент будет на первом месте, а первый на последнем и т.д.)
+
+int [] CreatNewArray (int size, int minVal, int maxVal)
+{
+    int[] firstArray = new int [size];
+    for (int i = 0; i < size; i++)
+        firstArray[i] = new Random().Next(minVal, maxVal + 1);
+    return firstArray;
+}
+
+void PrintArray(int [] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+int [] ReverseArray(int[] startArray)
+{
+    int lenStAr = startArray.Length;
+    for(int i = 0; i < lenStAr/ 2; i++)
+    {
+        int temp = startArray[i];
+        startArray[i] = startArray[lenStAr - 1 - i];
+        startArray[lenStAr - 1 - i] = temp;
+    }
+    return startArray;
+}
+
+int sizeArray = new Random().Next(5, 20);
+Console.WriteLine($"The length of your array is{sizeArray}");
+Console.WriteLine();
+int minimalVal = 0;
+int maximalVal = 100;
+
+int [] newArray = CreatNewArray(sizeArray, minimalVal, maximalVal);
+PrintArray(newArray);
+int []reversedArray = ReverseArray(newArray);
+PrintArray(reversedArray);
