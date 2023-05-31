@@ -489,7 +489,7 @@ double [] CreatRandomArray (int size, int minVal, int maxVal)
 {
     double [] newArray = new double[size];
     for(int i = 0; i < size; i++)
-        newArray[i] = newArray[i] = new Random().Next(minVal, maxVal + 1) + new Random().NextDouble();
+        newArray[i]  = Math.Round( new Random().Next(minVal, maxVal + 1) + new Random().NextDouble(), 2);
         
     return newArray;
 }
@@ -545,9 +545,13 @@ double FindMax( )
     void Result()
     {  double minNum = FindMin();
        double maxNum = FindMax();
-    double res = maxNum - minNum;
-    
+    double res =Math.Round( maxNum - minNum, 2);
+    Console.WriteLine($"The minimum number is {minNum}");
+    Console.WriteLine();
+    Console.WriteLine($"The maximum number is {maxNum}");
+    Console.WriteLine();
     Console.WriteLine($"The difference between the maximum and minimum elements of the array is {res}");
+
     }
 
 Result();
