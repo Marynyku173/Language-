@@ -707,7 +707,7 @@ Count1099 (arrayStart);
 
 // Напишите программу, которая перевернет одномерный массив
 //(последний элемент будет на первом месте, а первый на последнем и т.д.)
-
+/*
 int [] CreatNewArray (int size, int minVal, int maxVal)
 {
     int[] firstArray = new int [size];
@@ -745,3 +745,114 @@ int [] newArray = CreatNewArray(sizeArray, minimalVal, maximalVal);
 PrintArray(newArray);
 int []reversedArray = ReverseArray(newArray);
 PrintArray(reversedArray);
+
+*/
+
+// Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи : a и b (пользователь)
+//Числа Фибоначчи — элементы числовой последовательности в которой каждое последующее число равно сумме двух предыдущих чисел.
+//0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+
+/*
+1 запросить N, a, b.
+2 убедитьсч, что N >= 2
+3 организовать цикл  по модели
+4 вывести массив на печать
+*/
+/*
+
+void ArrFib(int count, int first, int second)
+{
+    int [] fibArray = new int [count];
+    fibArray[0] = first;
+    fibArray[1] = second;
+    for(int i = 2; i < count; i++)
+        fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+
+PrintArray(fibArray);
+}
+
+void PrintArray(int [] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+Console.WriteLine("Input count of elements: ");
+int countOfElem = Convert.ToInt32(Console.ReadLine());
+
+if(countOfElem < 2)
+{
+    while(countOfElem < 2)
+    {
+        Console.WriteLine("Impossible value");
+        Console.WriteLine("Input count of elements: ");
+        countOfElem = Convert.ToInt32(Console.ReadLine());
+    }
+    
+}
+Console.WriteLine("Input first  element: ");
+int firstElem = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input second element: ");
+int secondElem = Convert.ToInt32(Console.ReadLine());
+
+
+ArrFib(countOfElem, firstElem, secondElem); 
+*/
+
+
+// Напишите программу, котррая на вход принимает три числа и проверяет,
+// может ли существовать треугольник со сторонами такой длины. 
+//Если каждая  сторона треугольникa меньше суммы двух других сторон, то такой треугольник существует.
+
+// bool True, false
+
+/*
+bool Triangle(int side1, int side2, int side3)
+{
+    if(side1< side2 + side3 && side2< side1 + side3 && side3< side1 + side2)
+        return true;
+    else return false;
+}
+
+Console.WriteLine("Input first  side: ");
+int firstSide = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input second  side: ");
+int secondSide = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input third  side: ");
+int thirdSide = Convert.ToInt32(Console.ReadLine());
+
+bool result = Triangle(firstSide, secondSide, thirdSide);
+
+if(result == true)
+    Console.WriteLine("Triangle exist!");
+else
+    Console.WriteLine("Triangle does not exist :((((");
+*/
+
+// Перевести число из 10чной системы в 2чную
+
+/*
+string BinarSyst( int num)
+{
+    string binResult = string.Empty;
+    while(num != 0)
+    {
+        binResult = num % 2 + binResult;
+        num /= 2;
+    }
+    return binResult;
+}
+Console.WriteLine("Input your number to convert to 2-System: ");
+int userNum = Convert.ToInt32(Console.ReadLine());
+
+string res = BinarSyst(userNum);
+Console.WriteLine($"Your number {userNum} on binar system is {res}.");
+*/
+y = k1*x + b1 <------- |  !!!!!!!!!
+y = k2*x + b2 <------- |  !!!!!!!!!!!!
+                       |
+k1*x + b1 = k2*x + b2  |
+k1*x - k2*x = b2 - b1  |
+x(k1 - k2) = b2 - b1   |
+x = ()/()---------------        !!!!!!!!!

@@ -461,20 +461,20 @@ void ShowArray( int[] array1)
 int sizeStart = new Random().Next(1, 100);
 Console.WriteLine($"The length of your array is{sizeStart}");
 Console.WriteLine();
-int minPossibVal = -100;
-int maxPossibVal = 100;
+int minVal = -100;
+int maxVal = 100;
 
-void ParityCheck(int [] array3DigNum)
+void ParityCheck(int [] arrayDigNum)
 {   int count = 0;
-    for(int i = 0; i < array3DigNum.Length; i++)
+    for(int i = 0; i < arrayDigNum.Length; i++)
         if(i % 2 !=0)
         {
-            count += array3DigNum[i];
+            count += arrayDigNum[i];
         }
        Console.WriteLine($"The sum of the elements standing in odd positions is equal to{count}"); 
 }
 
-int [] arrayStart = CreatRandomArray( sizeStart, minPossibVal,maxPossibVal );
+int [] arrayStart = CreatRandomArray( sizeStart, minVal,maxVal );
 ShowArray(arrayStart);
 Console.WriteLine();
 
