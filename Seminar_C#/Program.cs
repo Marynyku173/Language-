@@ -849,6 +849,7 @@ int userNum = Convert.ToInt32(Console.ReadLine());
 string res = BinarSyst(userNum);
 Console.WriteLine($"Your number {userNum} on binar system is {res}.");
 */
+/*
 y = k1*x + b1 <------- |  !!!!!!!!!
 y = k2*x + b2 <------- |  !!!!!!!!!!!!
                        |
@@ -856,3 +857,4 @@ k1*x + b1 = k2*x + b2  |
 k1*x - k2*x = b2 - b1  |
 x(k1 - k2) = b2 - b1   |
 x = ()/()---------------        !!!!!!!!!
+*/

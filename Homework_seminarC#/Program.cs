@@ -484,7 +484,7 @@ ParityCheck (arrayStart);
 //Задача 38: Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива.
 
-
+/*
 double [] CreatRandomArray (int size, int minVal, int maxVal)
 {
     double [] newArray = new double[size];
@@ -556,3 +556,33 @@ double FindMax( )
     }
 
 Result();
+
+*/
+
+
+
+
+//Задача 41: Пользователь вводит с клавиатуры M чисел. 
+//Посчитайте, сколько чисел больше 0 ввёл пользователь.
+/*
+int[] NumUser = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+void NumGreatZero()
+{
+    int score = 0;
+    for(int i = 0; i < NumUser.Length; i++)
+        if(NumUser [i] > 0)
+        score++;
+   Console.WriteLine($"Here's how many {score} numbers greater than zero you entered.");     
+}
+
+NumGreatZero();
+
+*/
+
+//Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
+// значения b1, k1, b2 и k2 задаются пользователем.
+
+Console.WriteLine("Input your number to convert to 2-System: ");
+int userNum = Convert.ToInt32(Console.ReadLine());
