@@ -858,3 +858,69 @@ k1*x - k2*x = b2 - b1  |
 x(k1 - k2) = b2 - b1   |
 x = ()/()---------------        !!!!!!!!!
 */
+
+
+// Задайте двумерный массив размером mxn, заполненный целыми числами
+// m = 3, n = 4
+// 1 4 8 19
+//  5 -2 33 -2
+// 77 3 8 1
+/*
+int [,] Create2dArray()// создание двумерного массива
+{
+    Console.WriteLine("Input count of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input count of colums: ");
+    int colums = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input count of minimum: ");
+    int minVal = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input count of maximum: ");
+    int maxVal = Convert.ToInt32(Console.ReadLine());
+
+    int [,] created2Array = new int [rows, colums];
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < colums; j++)
+        {
+            created2Array[i, j] = new Random().Next(minVal, maxVal +1);
+            
+        }
+    }
+    return created2Array;
+}
+
+void Print2Array(int[,] array2d)// вывод пользователю 2хмерного массива
+{
+    for(int i = 0; i < array2d.GetLength(0); i++)// вывод по номеру строки
+    {
+        for(int j = 0; j < array2d.GetLength(1); j++) //вывод внутри строки по столбцам
+        {
+            Console.Write(array2d[i, j] + " ");// печать конкретного элемента массива
+        }
+        Console.WriteLine();// переход вывода на новую строку массива
+    }
+    Console.WriteLine(); //отступ от самого массива
+}
+int [,] new2Array = Create2dArray();
+
+Print2Array(new2Array);
+*/
+// Задайте двумерный массив размера m на n, какждый элемент в массиве находится по формуле : А(mn) = m +n
+//Выведите полученный массив на экран
+// m = 3, n = 4
+/*
+ 0 1 2 3    [0,0] [0,1] [0,2] [0,3]
+ 1 2 3 4    [1,0] [1,1] [1,2] [1,3]
+ 2 3 4 5
+ */
+
+int [,] FillArray2D()
+{
+    Console.WriteLine("Enter count of rows: ");
+    int userRows = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter count of colums: ");
+    int userColums = Convert.ToInt32(Console.ReadLine());
+
+    int [,] filled2dArray = new int[userRows, userColums];
+}
