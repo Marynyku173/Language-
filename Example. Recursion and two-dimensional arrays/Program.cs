@@ -47,6 +47,7 @@ Console.WriteLine();
 FillArray(matrix);
 PrintArray(matrix);
 */
+/*
 int[,] pic = new int[,]
 {
 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -76,20 +77,61 @@ int[,] pic = new int[,]
 
 void PrintImage(int[,] image)
 {
-for(int i = 0; i < image.GetLength(0); i++)// matrix.GetLength(0)- это конструкция дает количество строк, где 0 это аргумент отвечающий за количество строк в массиве
-{
-    for(int j = 0; j < image.GetLength(1); j++)// matrix.GetLength(1)- это конструкция дает количество столбцов, где 1 это аргумент отвечающий за количество столбцов в массиве
+    for(int i = 0; i < image.GetLength(0); i++)
     {
-        if(image[i, j] == 0) Console.WriteLine($" ");
-        else Console.WriteLine($"+");
+        for(int j = 0; j < image.GetLength(1); j++)
+        {
+            if(image[i,j] == 0) Console.Write($" ");
+            else Console.Write($"+");
+        }
+    Console.WriteLine();   
     }
-  Console.WriteLine();   
-}
 }
 
-
-
+void FillImage(int row, int col)
+{
+    if(pic[row,col] == 0)
+    {
+        pic[row, col] = 1;
+        FillImage(row - 1, col);
+        FillImage(row, col - 1);
+        FillImage(row + 1, col);
+        FillImage(row, col + 1);
+    }
+}
 
 PrintImage(pic);
+FillImage(13, 13);
+PrintImage(pic);
+*/
+/*//расчет факториала
+Double Factorial(int n)
+{
 
+    // 1! = 1
+    // 0! = 1
+    if(n == 1) return 1;
+    else return n * Factorial(n - 1);
 
+}
+
+for(int i = 1; i < 40; i++)
+{
+    Console.WriteLine($"{i}! = {Factorial(i)}");
+}
+*/// расчет число Фибоначчи
+/* а(1)= 1
+а(2) = 1
+а(n) = a(n -1 ) + a(n - 2)
+*/
+
+double Fibonacci(int n)
+{
+    if (n == 1 || n == 2) return 1;
+    else return Fibonacci (n - 1) + Fibonacci(n - 2);
+
+}
+ for(int i = 1; i < 50; i++)
+ {
+    Console.WriteLine($"f({i}) = {Fibonacci(i)}");
+ }
