@@ -914,7 +914,7 @@ Print2Array(new2Array);
  1 2 3 4    [1,0] [1,1] [1,2] [1,3]
  2 3 4 5
  */
-
+/*
 int [,] FillArray2D()
 {
     Console.WriteLine("Enter count of rows: ");
@@ -923,4 +923,86 @@ int [,] FillArray2D()
     int userColums = Convert.ToInt32(Console.ReadLine());
 
     int [,] filled2dArray = new int[userRows, userColums];
+
+    for(int i = 0; i < userRows; i++)
+    for(int j = 0; j < userColums; j++)
+    filled2dArray[i,j] = i + j;
+
+    return filled2dArray;
 }
+
+void Show2DArray (int [,] array2D)
+{
+    for(int i = 0; i < array2D.GetLength(0); i++)
+    {
+        for( int j = 0; j < array2D.GetLength(1); j++)
+        {
+            Console.Write(array2D[i,j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int [,] secondTaskArray = FillArray2D();
+Show2DArray(secondTaskArray);
+
+*/
+
+// Задайте двумерный вещественный массив .Найдите Элементы, у которых оба индекса четные,
+// и замените эти элементы на их квадраты
+
+double [,] Create2DArray(int row, int column, int minV, int maxV)
+{
+    double [,] created2Darray = new double[row, column];
+
+
+     for( int i = 0; i < row; i++)
+        for( int j = 0; j < column; j++)
+            created2Darray[i,j] = Math.Round((new Random().Next(minV, maxV)) + new Random().NextDouble(), 2);
+
+     return created2Darray;
+}
+
+void ShowDouble2Darray(double [,] array)
+{
+    for( int i = 0; i< array.GetLength(0); i++)
+    {
+
+    
+        for( int j = 0; j< array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }
+         Console.WriteLine();
+    } 
+    Console.WriteLine();
+}
+
+double [,] Change2DArray(double [,] arrayToChange)
+{
+    for( int i = 0; i< arrayToChange.GetLength(0); i++)
+    {
+        for( int j = 0; j< arrayToChange.GetLength(1); j++)
+        {
+            if(i % 2 != 1 && j % 2  != 1)
+                arrayToChange[i,j] =  Math.Round(Math.Pow(arrayToChange[i,j], 2), 2);
+        }
+    }
+    return arrayToChange;
+}
+
+    Console.WriteLine("Enter count of rows: ");
+    int userRows = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter count of colums: ");
+    int userColums = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter count of min value: ");
+    int userMin = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter count of max value: ");
+    int userMax = Convert.ToInt32(Console.ReadLine());
+
+double [,] createdArray = Create2DArray(userRows, userColums, userMin, userMax);
+ShowDouble2Darray(createdArray);
+double [,] changedArray = Change2DArray(createdArray);
+ShowDouble2Darray(changedArray);
+
