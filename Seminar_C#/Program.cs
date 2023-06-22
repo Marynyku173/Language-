@@ -951,7 +951,7 @@ Show2DArray(secondTaskArray);
 
 // Задайте двумерный вещественный массив .Найдите Элементы, у которых оба индекса четные,
 // и замените эти элементы на их квадраты
-
+/*
 double [,] Create2DArray(int row, int column, int minV, int maxV)
 {
     double [,] created2Darray = new double[row, column];
@@ -1005,4 +1005,153 @@ double [,] createdArray = Create2DArray(userRows, userColums, userMin, userMax);
 ShowDouble2Darray(createdArray);
 double [,] changedArray = Change2DArray(createdArray);
 ShowDouble2Darray(changedArray);
+*/
 
+// Задайте двумерный массив.
+// Напишите программу, которая поменяет местами строки массива.
+
+int [,] Created2dRandomArray(int rows, int colums, int min, int max)
+{
+    int[,] array = new int[rows, colums];
+    for( int i = 0; i < rows; i++)
+    {
+        for( int j = 0; j < colums; j++)
+        {
+            array[i,j] = new Random().Next(min, max+1);
+        }
+
+    }
+    return array;
+}
+void Show2dArray( int [,] array)
+{
+    for( int i = 0; i < array.GetLength(0); i++)
+    {
+        for(  int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }
+        Console.WriteLine();
+}
+}
+/*
+int [,] ChangeArrayRows(int [,] array)
+{
+    Console.Write("Input first row number: ");
+    int row1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input second row number: ");
+    int row2 = Convert.ToInt32(Console.ReadLine());
+    if(row1 >= 0 && row1 < array.GetLength(0) && row2 >= 0 && row2 < array.GetLength(0))
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            int temp = array[row1, j];
+            array[row1,j] = array[row2,j];
+            array[row2,j] = temp;
+        }
+        return array;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect data!");//если неправильно заново вызываем функцию
+        ChangeArrayRows(array);
+        return array;
+    }
+    
+}
+
+Console.WriteLine(" Input rows numb: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input colums numb: ");
+int colums = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input min numb: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input max numb: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int [,] array = Created2dRandomArray(rows, colums, min, max);
+Show2dArray(array);
+Console.WriteLine();
+int [,] changed_array = ChangeArrayRows( array);
+Show2dArray(changed_array);
+*/
+// Зада1те двумерный массив
+// Напишите программу, которая заменяет строки на столбцы.
+// В случае, если это невозможно, программа должна вывести
+// сообщение для пользователя
+/*
+int [,] ChangeRowsCols(int [,] array)
+{   
+    if(array.GetLength(0) == array.GetLength(1))
+    {
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = i + 1; j < array.GetLength(1); j++)
+        {
+            int temp = array[i,j];
+            array[i,j]= array[j,i];
+            array[j,i] = temp;
+        }
+    }
+    return array;
+    }
+    else Console.WriteLine("Incorrect value! ");
+    return array;
+}
+
+Console.WriteLine(" Input rows numb: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input colums numb: ");
+int colums = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input min numb: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input max numb: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int [,] array = Created2dRandomArray(rows, colums, min, max);
+Show2dArray(array);
+Console.WriteLine();
+int [,] changed_array = ChangeRowsCols( array);
+Show2dArray(changed_array);
+*/
+
+//Задайте двумерный массив из целых чисел
+// Напишите программу, которая занулит строку и столбец.
+// на пересечении которых расположен наименьший эелемент массива.
+
+int [,] NullRowsCols(int [,] array)
+{
+    int i_min = 0;
+    int j_min = 0;
+     for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            if(array[i,j] < array[i_min, j_min])
+            {
+                i_min = i;
+                j_min = j;
+            }
+        }
+    }
+    for(int j = 0; j < array.GetLength(1); j++)
+        array[i_min, j] = 0;
+    for(int i = 0; i < array.GetLength(1); i++)
+        array[i, j_min] = 0;
+    return array;
+}
+
+Console.WriteLine(" Input rows numb: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input colums numb: ");
+int colums = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input min numb: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Input max numb: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int [,] array = Created2dRandomArray(rows, colums, min, max);
+Show2dArray(array);
+Console.WriteLine();
+int [,] changed_array = NullRowsCols( array);
+Show2dArray(changed_array);
