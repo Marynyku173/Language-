@@ -839,7 +839,7 @@ printArray(RanArray);
 // Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 /*
 int height = EnterInt("Enter the number of rows: ");
-int width = EnterInt("Enter the number of colums: ");
+int width = EnterInt("Enter the number of columns: ");
  
 int[,] numbers = new int[height, width];
 Fill2DArray(numbers);
@@ -878,7 +878,7 @@ void Print2DArray(int[,] numbers)
 
  void SumInLines(int[,] numbers)
 {
-    int[] sumInLines = new int[numbers.GetLength(0)];
+    int[] sumInLines = new int[numbers.GetLength(0)];//создаем массив для подсчета суммы построчно
     Console.Write("Sums of elements in each row: ");
     for (int i = 0; i < numbers.GetLength(0); i++)
         {
@@ -904,10 +904,10 @@ void Print2DArray(int[,] numbers)
 // которая будет находить произведение двух матриц.
 /*
 Random rnd = new Random();
- int[,] CreateMatrix(int row, int col, int min, int max)
+int[,] CreateMatrix(int row, int col, int min, int max)
 {
     int[,] matrix = new int[row, col];
-    
+
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -917,7 +917,7 @@ Random rnd = new Random();
     }
     return matrix;
 }
- void PrintMatrix(int[,] matrix)
+void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -930,7 +930,7 @@ Random rnd = new Random();
         Console.WriteLine("|");
     }
 }
- int[,] DivMatrix(int[,] matrix1, int[,] matrix2)
+int[,] DivMatrix(int[,] matrix1, int[,] matrix2)
 {
     var matrix3 = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
     if (matrix1.GetLength(1) == matrix2.GetLength(0))
@@ -949,9 +949,9 @@ Random rnd = new Random();
     }
     return matrix3;
 }
- void Main(string[] args)
+void Main(string[] args)
 {
-    int[,] array2D = CreateMatrix(rnd.Next(2,4), rnd.Next(2, 4), 0, 9);
+    int[,] array2D = CreateMatrix(rnd.Next(2, 4), rnd.Next(2, 4), 0, 9);
     int[,] matrix = CreateMatrix(rnd.Next(2, 4), rnd.Next(2, 4), 0, 9);
     PrintMatrix(array2D);
     Console.WriteLine();
@@ -1075,4 +1075,12 @@ while (temp <= matrix.GetLength(0) * matrix.GetLength(1))
 }
 
 PrintMatrix(matrix);
+*/
+/*
+// делает рандом из 8 чисел неповторяющимся числами
+Random rnd = new Random(); 
+HashSet<int> hs = new HashSet<int>(); 
+while (hs.Count < 8) hs.Add(rnd.Next(10)); 
+int[] a = hs.ToArray(); 
+foreach (int e in a) Console.Write(e + " ");
 */
